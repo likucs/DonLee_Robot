@@ -20,5 +20,5 @@ class Mo_Tech_YT(object):
     MO_TECH_YT_13 = os.environ.get("PHOTTO", "https://telegra.ph/file/7d04d3370126136c9c7a9.jpg")
     MO_TECH_YT_14 = os.environ.get("FSUB_TEXT", "Join My Update Channel")
     forces_sub = environ.get('FORCES_SUB')
-    MO_TECH_YT_15 = int(forces_sub) if  and id_pattern.search(forces_sub) else forces_sub
+    MO_TECH_YT_15 = int(forces_sub) if forces_sub and id_pattern.search(forces_sub) else forces_sub
     MO_TECH_YT_16 = os.environ.get("USER_SESSION")
