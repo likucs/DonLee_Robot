@@ -17,15 +17,18 @@ db = Database()
 @DonLee_Robot.on_message(filters.command(["start"]) & filters.private, group=1)
 async def start(bot, update):
     update_channel = Mo_Tech_YT.MO_TECH_YT_15
-       if FORCES_SUB:
-            invite_link = await bot.create_chat_invite_link(int(FORCES_SUB))
-            try:
-                user = await bot.get_chat_member(int(FORCES_SUB), message.from_user.id)
-                if user.status == "kicked":
-                    await bot.send_message(
-                        chat_id=message.from_user.id,
-                        text="Sorry Sir, You are Banned to use me.",
-               return
+    if FORCES_SUB:
+         invite_link = await bot.create_chat_invite_link(int(FORCES_SUB))
+         try:
+             user = await bot.get_chat_member(int(FORCES_SUB), message.from_user.id)
+             if user.status == "kicked":
+                 await bot.send_message(
+                     chat_id=message.from_user.id,
+                     text="Sorry Sir, You are Banned to use me.",
+                     parse_mode="markdown",
+                     disable_web_page_preview=True
+                 )
+                 return
         except UserNotParticipant:
             ident, file_id = message.text.split("_-_-_-_")
             await bot.send_message(
