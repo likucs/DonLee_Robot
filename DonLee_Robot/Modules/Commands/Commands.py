@@ -34,7 +34,7 @@ async def start(bot, update):
              await update.reply_text(
                  text=Mo_Tech_YT.MO_TECH_YT_14,
                  reply_markup=InlineKeyboardMarkup([
-                     [ InlineKeyboardButton(text=" 📢 Join My Update Channel 📢", url=invite_link.invite_link)]
+                     [ InlineKeyboardButton(text=" 📢 Join My Update Channel 📢", url=f"{Mo_Tech_YT.MO_TECH_YT_14}")]
                ])
              )
              return
