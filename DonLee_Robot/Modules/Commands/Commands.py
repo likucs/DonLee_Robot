@@ -40,7 +40,12 @@ async def start(bot, update):
              )
              return
          except Exception:
-             await update.reply_text(f"<b>This bot should be the admin on your update channel</b>\n\n<b>💢 ഈ ചാനലിൽ  {Mo_Tech_YT.MO_TECH_YT_15} ബോട്ടിനെ അഡ്മിൻ ആക്. എന്നിട്ട് /start കൊടുക്</b>\n\n<b>🗣️ any Doubt @Mo_Tech_Group</b>")
+             await bot.send_message(
+                 chat_id=message.from_user.id,
+                 text="Something went Wrong.",
+                 parse_mode="markdown",
+                 disable_web_page_preview=True
+             )
              return
     try:
         file_uid = update.command[1]
