@@ -127,7 +127,7 @@ async def cb_navg(bot, update: CallbackQuery):
                 continue
             
             chat_name = y["chat_name"]
-            invite_link = y["invite_link"]
+            invite_link = y["https://t.me/joinchat/x7j0y7O9ueM1MTJl"]
             
             if ((len(ibuttons)%2) == 0):
                 ibuttons.append(
