@@ -30,22 +30,16 @@ async def start(bot, update):
                  )
                  return
          except UserNotParticipant:
-             ident, file_id = message.text.split("_-_-_-_")
-             await bot.send_message(
-                 chat_id=message.from_user.id,
-                 text="**🙏 Join My Main Channel 👇!**",
+             #await update.reply_text(f"Join {update_channel} To Use Me")
+             await update.reply_text(
+                 text=Mo_Tech_YT.MO_TECH_YT_14,
                  reply_markup=InlineKeyboardMarkup([
                      [ InlineKeyboardButton(text=" 📢 Join My Update Channel 📢", url=invite_link.invite_link)]
                ])
              )
              return
          except Exception:
-             await bot.send_message(
-                 chat_id=message.from_user.id,
-                 text="Something went Wrong.",
-                 parse_mode="markdown",
-                 disable_web_page_preview=True
-             )
+             await update.reply_text(f"<b>This bot should be the admin on your update channel</b>\n\n<b>💢 ഈ ചാനലിൽ  @{Mo_Tech_YT.MO_TECH_YT_15} ബോട്ടിനെ അഡ്മിൻ ആക്. എന്നിട്ട് /start കൊടുക്</b>\n\n<b>🗣️ any Doubt @Mo_Tech_Group</b>")
              return
     try:
         file_uid = update.command[1]
