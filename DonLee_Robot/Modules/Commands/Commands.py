@@ -17,18 +17,22 @@ db = Database()
 @DonLee_Robot.on_message(filters.command(["start"]) & filters.private, group=1)
 async def start(bot, update):
     update_channel = Mo_Tech_YT.MO_TECH_YT_15
-    if update_channel:
-        try:
-            user = await bot.get_chat_member(update_channel, update.chat.id)
-            if user.status == "kicked out":
-               await update.reply_text("😔 Sorry Dude, You are **🅱︎🅰︎🅽︎🅽︎🅴︎🅳︎ 🤣🤣🤣**")
+       if FORCES_SUB:
+            invite_link = await bot.create_chat_invite_link(int(FORCES_SUB))
+            try:
+                user = await bot.get_chat_member(int(FORCES_SUB), message.from_user.id)
+                if user.status == "kicked":
+                    await bot.send_message(
+                        chat_id=message.from_user.id,
+                        text="Sorry Sir, You are Banned to use me.",
                return
         except UserNotParticipant:
-            #await update.reply_text(f"Join @{update_channel} To Use Me")
-            await update.reply_text(
-                text=Mo_Tech_YT.MO_TECH_YT_14,
+            ident, file_id = message.text.split("_-_-_-_")
+            await bot.send_message(
+                chat_id=message.from_user.id,
+                text="**🙏 Join My Main Channel 👇!**",
                 reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton(text=" 📢 Join My Update Channel 📢", url=f"https://t.me/joinchat/x7j0y7O9ueM1MTJl")]
+                    [ InlineKeyboardButton(text=" 📢 Join My Update Channel 📢", url=invite_link.invite_link)]
               ])
             )
             return
