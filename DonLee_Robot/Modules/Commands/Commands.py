@@ -17,7 +17,7 @@ db = Database()
 @DonLee_Robot.on_message(filters.command(["start"]) & filters.private, group=1)
 async def start(bot, update):
     update_channel = Mo_Tech_YT.MO_TECH_YT_15
-    if FORCES_SUB:
+    if update_channel:
          invite_link = await bot.create_chat_invite_link(int(FORCES_SUB))
          try:
              user = await bot.get_chat_member(int(FORCES_SUB), message.from_user.id)
