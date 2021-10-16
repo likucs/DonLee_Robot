@@ -1,4 +1,8 @@
+import re
+from os import environ
 import os
+
+id_pattern = re.compile(r'^.\d+$')
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 class Mo_Tech_YT(object):
     MO_TECH_YT_01 = InlineKeyboardMarkup
@@ -15,5 +19,5 @@ class Mo_Tech_YT(object):
     MO_TECH_YT_12 = os.environ.get("BOT_TOKEN")
     MO_TECH_YT_13 = os.environ.get("PHOTTO", "https://telegra.ph/file/7d04d3370126136c9c7a9.jpg")
     MO_TECH_YT_14 = os.environ.get("FSUB_TEXT", "Join My Update Channel")
-    MO_TECH_YT_15 = os.environ.get("FORCES_SUB", "Mo_Tech_YT")
+    MO_TECH_YT_15 = int(FORCESUB) if FORCES_SUB and id_pattern.search(FORCES_SUB) else FORCES_SUB
     MO_TECH_YT_16 = os.environ.get("USER_SESSION")
