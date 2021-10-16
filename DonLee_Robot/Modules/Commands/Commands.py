@@ -18,9 +18,9 @@ db = Database()
 async def start(bot, update):
     update_channel = Mo_Tech_YT.MO_TECH_YT_15
     if update_channel:
-         invite_link = await bot.create_chat_invite_link(int(FORCES_SUB))
+         invite_link = await bot.create_chat_invite_link(int(Mo_Tech_YT.MO_TECH_YT_15))
          try:
-             user = await bot.get_chat_member(int(FORCES_SUB), message.from_user.id)
+             user = await bot.get_chat_member(int(Mo_Tech_YT.MO_TECH_YT_15), message.from_user.id)
              if user.status == "kicked":
                  await bot.send_message(
                      chat_id=message.from_user.id,
